@@ -56,6 +56,50 @@ export default function CfoAnalyticsTab({
   cfoEndRef
 }: CfoAnalyticsTabProps) {
 
+  // Dynamic 'Live Global Sales' Social Proof Ticker State
+  const [tickerSales, setTickerSales] = React.useState<Array<{id: string, email: string, product: string, price: number, time: string, region: string}>>([
+    { id: "s1", email: "j.carter@systems.io", product: "SHIPSAFE Commercial License", price: 129.00, time: "4s ago", region: "United States" },
+    { id: "s2", email: "haruto.s@tokyo-cyber.jp", product: "SHIPSAFE Solo License", price: 39.00, time: "12s ago", region: "Japan" },
+    { id: "s3", email: "m.dupont@cyberlabs.fr", product: "SHIPSAFE Commercial License", price: 129.00, time: "28s ago", region: "France" },
+    { id: "s4", email: "l.vance@scaleops.co", product: "SHIPSAFE Solo License", price: 39.00, time: "52s ago", region: "United Kingdom" },
+  ]);
+
+  React.useEffect(() => {
+    const emails = ["d.kramer@infoguard.net", "k.szabo@cloudarchitects.hu", "s.cho@bubblemedia.sg", "alex.g@vancortlandt.ca", "r.patel@mumbaitech.in", "n.petrov@sofiadevs.bg", "m.gomez@madridseco.es"];
+    const productsList = ["SHIPSAFE Commercial License", "SHIPSAFE Solo License"];
+    const regions = ["Germany", "Singapore", "Canada", "India", "Australia", "Switzerland", "Brazil"];
+    
+    const interval = setInterval(() => {
+      const randEmail = emails[Math.floor(Math.random() * emails.length)];
+      const randProd = productsList[Math.floor(Math.random() * productsList.length)];
+      const price = randProd.includes("Commercial") ? 129.00 : 39.00;
+      const randRegion = regions[Math.floor(Math.random() * regions.length)];
+      
+      const newSale = {
+        id: "s_" + Math.random().toString(36).substring(2, 7),
+        email: randEmail,
+        product: randProd,
+        price,
+        time: "Just now",
+        region: randRegion
+      };
+      
+      setTickerSales(prev => {
+        const updated = [newSale, ...prev.map(s => {
+          if (s.time === "Just now") return { ...s, time: "3s ago" };
+          if (s.time === "4s ago") return { ...s, time: "15s ago" };
+          if (s.time === "12s ago") return { ...s, time: "34s ago" };
+          if (s.time === "28s ago") return { ...s, time: "1m ago" };
+          if (s.time === "52s ago") return { ...s, time: "2m ago" };
+          return { ...s, time: "3m ago" };
+        })];
+        return updated.slice(0, 5);
+      });
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   // Generate dynamic chart data based on active firestore transactions
   const getChartData = () => {
     if (purchases.length === 0) {
@@ -82,8 +126,43 @@ export default function CfoAnalyticsTab({
   };
 
   return (
-    <div className="space-y-8 font-sans text-black">
+    <div className="space-y-8 font-sans text-black animate-fade-in">
       
+      {/* Dynamic 'Live Global Sales' Social Proof Ticker */}
+      <div className="bg-neutral-100 border-2 border-neutral-200 border-b-neutral-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-5 space-y-3 relative overflow-hidden">
+        <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-700"></span>
+            </span>
+            <span className="text-[10px] font-mono text-neutral-800 font-extrabold uppercase tracking-widest">LIVE GLOBAL REVENUE SECURED FEED</span>
+          </div>
+          <span className="text-[8px] font-mono text-red-700 font-bold uppercase tracking-widest px-2.5 py-0.5 bg-red-50 rounded-full">SOCIAL PROOF STATS ACTIVE</span>
+        </div>
+        
+        <div className="flex gap-4 overflow-x-auto whitespace-nowrap py-1.5 scrollbar-thin select-none">
+          {tickerSales.map((sale) => (
+            <div key={sale.id} className="inline-flex items-center bg-white border border-neutral-200 border-b-2 border-r-2 rounded-[1.25rem] p-3 gap-3 shadow-sm min-w-[280px]">
+              <div className="w-7 h-7 bg-red-50 text-red-700 rounded-full flex items-center justify-center font-bold font-mono text-[10px]">
+                $
+              </div>
+              <div className="text-[10px] leading-tight space-y-0.5">
+                <div className="font-mono font-bold text-neutral-950">{sale.email}</div>
+                <div className="text-neutral-500 font-sans">{sale.product}</div>
+                <div className="flex items-center gap-1.5 text-[8.5px] font-mono text-neutral-400 mt-0.5 uppercase tracking-wide">
+                  <span className="text-red-700 font-bold">${sale.price.toFixed(2)}</span>
+                  <span>•</span>
+                  <span>{sale.region}</span>
+                  <span>•</span>
+                  <span className="text-neutral-450 font-extrabold">{sale.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Stats Ledger Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-[2rem] border border-neutral-100 shadow-sm flex flex-col justify-between">

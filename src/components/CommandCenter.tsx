@@ -660,7 +660,7 @@ export default function CommandCenter({
               </button>
             </div>
             <div className="text-[10px] font-mono text-[#737373] tracking-widest font-black uppercase flex items-center gap-2">
-              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-red-700 rounded-full animate-pulse" />
               <span>Operational Core: Sandbox Mode (Persistent Local Storage)</span>
             </div>
           </div>
