@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Master Styling System */
+body {
+  font-family: var(--font-sans);
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+/* Serif Accent Family */
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* Precise Pinterest Column Engine */
+.pinterest-grid {
+  column-count: 1;
+  column-gap: 2rem;
+}
+@media (min-width: 768px) { 
+  .pinterest-grid { column-count: 2; } 
+}
+@media (min-width: 1280px) { 
+  .pinterest-grid { column-count: 3; } 
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+
+/* High-Fidelity Backdrop Filter Overlays */
+.neo-blur {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* High-Ratio Cubic Bezier Fade-In Entrance */
+.page-transition {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Minimalist Scrollbar Overrides */
+::-webkit-scrollbar { 
+  width: 4px; 
+  height: 4px;
+}
+::-webkit-scrollbar-track { 
+  background: #f5f5f5; 
+}
+::-webkit-scrollbar-thumb { 
+  background: #737373; 
+  border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+.fancy-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb {
+  background: #737373;
+  border-radius: 10px;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
