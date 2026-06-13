@@ -322,7 +322,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)] pointer-events-none opacity-60" />
 
       {/* Modern High-End Fixed Top Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/95 neo-blur border-b border-neutral-100">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/95 neo-blur border-b border-neutral-100 border-t-2 border-brandred/60">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
@@ -380,10 +380,11 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white rounded-full border border-neutral-200 mb-8 text-[10px] text-neutral-500 font-bold tracking-[0.4em] uppercase"
+          className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white rounded-full border border-brandred/30 mb-8 text-[10px] text-neutral-500 font-bold tracking-[0.4em] uppercase relative shadow-[0_1px_3px_rgba(122,0,16,0.05)]"
         >
-          <ShieldCheck className="w-3.5 h-3.5 text-black" />
-          <span>SECURE AGENTIC BUILD DEFENSES</span>
+          <span className="w-1 h-1 rounded-full bg-brandred absolute left-3 animate-pulse" />
+          <ShieldCheck className="w-3.5 h-3.5 text-brandred ml-1 shrink-0" strokeWidth={2.5} />
+          <span className="text-black font-extrabold pr-1 pl-1">SECURE AGENTIC BUILD DEFENSES</span>
         </motion.div>
 
         <motion.h1
@@ -393,14 +394,14 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[9.5rem] font-black tracking-tighter uppercase max-w-6xl mx-auto flex flex-col items-center leading-[0.78]"
         >
           <span className="text-black select-none z-10 relative">SAFE BUILD.</span>
-          <span className="text-brandred select-none z-20 relative -mt-[0.12em]">FAST LAUNCH.</span>
+          <span className="text-brandred select-none z-20 relative -mt-[0.165em]" style={{ marginTop: '-0.165em' }}>FAST LAUNCH.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="serif italic font-light text-brandred/90 lowercase text-3xl sm:text-5xl mt-6 max-w-3xl mx-auto leading-tight"
+          className="serif italic font-light text-neutral-900 lowercase text-3xl sm:text-5xl mt-6 max-w-3xl mx-auto leading-tight"
         >
           {getActiveSegmentation().segment.pitch}
         </motion.p>
