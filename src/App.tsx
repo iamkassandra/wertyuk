@@ -7,48 +7,33 @@ import { Product } from './types';
 // Core default high-tech blueprints to ensure zero-cold-start gorgeous interface
 const DEFAULT_PRODUCTS: Product[] = [
   {
-    id: "asset_prospector",
-    name: "Account Prospector Automation Blueprint",
-    description: "Autonomous lead finder and parser. Headlessly sweeps Hacker News, social tech channels, and recruiter aggregates to identify corporate hiring budgets, isolates AI-oriented slots, and compiles strategic outreach rosters.",
-    price: 29.00,
-    fileUrl: "asset_prospector",
+    id: "asset_solo",
+    name: "SHIPSAFE Solo License",
+    description: "Personal project license for builders applying SHIPSAFE AI guardrails to applications they own or operate. Includes persistent coding-agent guardrails, test matrices, and the 68-control Launch Readiness Scorecard.",
+    price: 39.00,
+    fileUrl: "asset_solo",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=400&q=80",
     category: "Blueprints",
     features: [
-      "Headless Puppeteer scraping queues",
-      "Dynamic lead metadata structuring",
-      "Interactive command logs console compiler",
-      "Auto-filtering key technology terms"
+      "Operating Manual & Quickstart Checklist",
+      "AGENTS.md, CLAUDE.md, GEMINI.md templates",
+      "Security Preflight & Authorization Test Matrix",
+      "68-control Launch Readiness Scorecard"
     ]
   },
   {
-    id: "asset_webhook",
-    name: "Express Social Webhook Queue",
-    description: "Multi-channel automated social publisher. Constructs secure post buffers with cryptographic HMACS, enabling sole orchestrators to dispatch parallel growth queues to X (Twitter), LinkedIn, and Slack simultaneously.",
-    price: 19.00,
-    fileUrl: "asset_webhook",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
-    category: "Micro-SaaS",
-    features: [
-      "Parallel social multi-post adapters",
-      "HMAC SHA256 cryptographic handshakes",
-      "Interval queues with custom post-delay timers",
-      "Client webhook authentication middleware"
-    ]
-  },
-  {
-    id: "asset_cfo",
-    name: "Agentic Cashflow CFO Controller",
-    description: "The supreme financial planning dashboard widget. Collects store orders from database snapshots, dynamically compiles MRR growth, measures active cloud burn-rates, and structures strategic forecast ledgers.",
-    price: 39.00,
-    fileUrl: "asset_cfo",
+    id: "asset_commercial",
+    name: "SHIPSAFE Commercial License",
+    description: "Commercial project license for freelancers, consultants, agencies, and studios applying SHIPSAFE during paid client work. Includes editable templates, client assessment assets, handover reports, and priority systems.",
+    price: 129.00,
+    fileUrl: "asset_commercial",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
-    category: "Controller",
+    category: "Enterprise",
     features: [
-      "Dynamic MRR velocity calculator",
-      "Ledger compilation and cash flow forecaster",
-      "Interactive target telemetry graphs module",
-      "Full offline fallback state support"
+      "Includes EVERYTHING in SHIPSAFE Solo Package",
+      "Resale handovers & commercial project reuse rights",
+      "Editable premium templates",
+      "Handover reports & Findings register"
     ]
   }
 ];

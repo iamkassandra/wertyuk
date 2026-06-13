@@ -20,7 +20,7 @@ export default function CustomerServiceChat({ onAddToCart }: CustomerServiceChat
     {
       id: 'init-1',
       role: 'model',
-      text: "Secured uplink established. Welcome to AetherOps. I am Aetheria, your custom AI system advisor.\n\nWe build and deploy elite production-ready intelligence pipelines immediately upon upfront payment. Tell me about your workflow bottlenecks, and I will align them with the perfect code blueprint from our vault or distribute a premium authorized discount code.",
+      text: "Secured uplink established. Welcome to SHIPSAFE AI. I am Aetheria, your expert system security advisor.\n\nWe provide bulletproof coding-agent guardrails and launch checklists instantly upon upfront payment. Tell me about your release bottlenecks or codebase setups, and I will recommend the perfect license or issue a premium authorized developer discount code.",
       createdAt: new Date().toISOString()
     }
   ]);
@@ -204,10 +204,10 @@ export default function CustomerServiceChat({ onAddToCart }: CustomerServiceChat
             {/* Quick Suggestions */}
             <div className="px-3 py-2 bg-white border-t border-neutral-100 overflow-x-auto whitespace-nowrap scrollbar-none flex gap-1.5">
               <button
-                onClick={() => selectShortcut("Which blueprint automates LinkedIn/prospects?")}
+                onClick={() => selectShortcut("Which license includes corporate resell rights?")}
                 className="text-[9px] bg-neutral-50 hover:bg-neutral-100 text-[#737373] hover:text-black hover:border-neutral-250 px-4 py-2 border border-neutral-150 rounded-full font-mono cursor-pointer transition uppercase tracking-wider font-extrabold"
               >
-                LinkedIn Prospector
+                Resell Rights
               </button>
               <button
                 onClick={() => selectShortcut("Can I have a discounts coupon?")}
@@ -216,7 +216,7 @@ export default function CustomerServiceChat({ onAddToCart }: CustomerServiceChat
                 Claim Coupon
               </button>
               <button
-                onClick={() => selectShortcut("How do I download files after payment?")}
+                onClick={() => selectShortcut("How do I download templates after payment?")}
                 className="text-[9px] bg-neutral-50 hover:bg-neutral-100 text-[#737373] hover:text-black hover:border-neutral-250 px-4 py-2 border border-neutral-150 rounded-full font-mono cursor-pointer transition uppercase tracking-wider font-extrabold"
               >
                 Downloads Info
@@ -230,10 +230,10 @@ export default function CustomerServiceChat({ onAddToCart }: CustomerServiceChat
                 <span>Bundle discounts apply</span>
               </span>
               <button
-                onClick={() => onAddToCart("asset_prospector")}
+                onClick={() => onAddToCart("asset_commercial")}
                 className="text-black hover:text-neutral-800 font-extrabold uppercase text-[9px] hover:underline cursor-pointer tracking-widest font-mono"
               >
-                Add Best Seller +
+                Add Commercial +
               </button>
             </div>
 

@@ -29,108 +29,70 @@ const ai = new GoogleGenAI({
 
 // Mock files database with genuine structural content for automated blueprints
 const DIGITAL_ASSETS: Record<string, string> = {
-  "asset_prospector": `// ==========================================
-// AETHEROPS ENTERPRISE ACCOUNT PROSPECTOR BLUEPRINT
-// ==========================================
-// Author: Sole Human AI Orchestrator
-// Build Version: 1.0.4-LTS
-// Target Client: Enterprise Saas Prospects
+  "asset_solo": `================================================================================
+                           SHIPSAFE SOLO CODE GUARDRAILS
+================================================================================
+Version: 1.2.0-LTS
+License: Personal Builder License (Single-seat)
+Author: SHIPSAFE AI Expert Systems
 
-import puppeteer from 'puppeteer';
+Welcome to your secure launch framework. This archive includes crucial developer
+templates to prevent coding-agent bugs and maintain safe, high-integrity builds.
 
-async function launchSocialProspecting() {
-  console.log('[Puppeteer] Launching headless browser campaign...');
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
-  
-  // Set viewport to look human-like
-  await page.setViewport({ width: 1280, height: 800 });
-  
-  console.log('[Prospector] Navigating to account prospecting targets...');
-  await page.goto('https://news.ycombinator.com/jobs', { waitUntil: 'networkidle2' });
-  
-  // Scrape hiring organizations needing AI integration
-  const leads = await page.evaluate(() => {
-    const jobNodes = document.querySelectorAll('.titleline a');
-    return Array.from(jobNodes).slice(0, 15).map(node => ({
-      title: node.textContent,
-      url: (node as HTMLAnchorElement).href,
-      flagged: node.textContent?.toLowerCase().includes('ai') || node.textContent?.toLowerCase().includes('data')
-    }));
-  });
-  
-  console.log(\`[Prospector] Found \${leads.length} active technology positions.\`);
-  console.log('[Growth] Routing flagged corporate clients to AI agent conversion queues...');
-  
-  await browser.close();
-  return leads;
-}
+--------------------------------------------------------------------------------
+1. PERSISTENT AGENT RULES (CLAUDE.md / AGENTS.md / GEMINI.md)
+--------------------------------------------------------------------------------
+Include this file at the root of your workspace to enforce core safe operation
+on AI coding partners:
 
-export default launchSocialProspecting;
+# MISSION RATING: STABLE
+[RULE 1] DO NOT OVERWRITE WORKING SYSTEM CRITERIA.
+[RULE 2] ALWAYS COMPILE & VERIFY TESTS IMMEDIATELY POST-EDIT.
+[RULE 3] NEVER EXPOSE SECRETS OR STRIPE WEBHOOK TOKENS CLIENT-SIDE.
+[RULE 4] WRITE REUSABLE TYPE ANNOTATIONS EARLY IN DEVELOPMENT.
+
+--------------------------------------------------------------------------------
+2. 12-POINT PRE-FLIGHT TEST MATRIX
+--------------------------------------------------------------------------------
+Verify these points before pushing code:
+[  ] 1. Port binding strictly defined to 3000 (No random port selectors).
+[  ] 2. Environment variables are loaded lazily.
+[  ] 3. Zero infinite useEffect renders present.
+[  ] 4. Clear fallback elements configured.
+[  ] 5. Form elements with active unique ID attributes.
 `,
-  "asset_webhook": `# ==========================================
-# AUTO-SOCIAL WEBHOOK AGENT & QUEUE CONFIG
-# ==========================================
-# Multi-platform content delivery pipelines (X, LinkedIn)
+  "asset_commercial": `================================================================================
+                       SHIPSAFE COMMERCIAL SYSTEM ARCHIVE
+================================================================================
+Version: 1.2.0-LTS
+License: Freelance / Studio / Agency Commercial License
+Author: SHIPSAFE AI Expert Systems
 
-import httpx
-import hmac
-import hashlib
-import time
+Welcome to the premium SHIPSAFE suite. This file includes editable client
+handover scorecards, finding registries, and remediation logs.
 
-class AetherWebhookPublisher:
-    def __init__(self, key: str, x_webhook_url: str):
-        self.secret_key = key.encode()
-        self.endpoint = x_webhook_url
+--------------------------------------------------------------------------------
+1. SHIPSAFE CLIENT HANDOVER PROTOCOLS
+--------------------------------------------------------------------------------
+When delivering a custom AI web agent or full-stack software to a client,
+complete the launch readiness scorecard. Provide a copy of the findings register:
 
-    def sign_payload(self, body: str) -> str:
-        signature = hmac.new(self.secret_key, body.encode(), hashlib.sha256).hexdigest()
-        return f"sha256={signature}"
+SYSTEM HEALTH ASSESSMENT INDEX:
+Score: 98/100
+Rating: EXCELLENT (Launch Cleared)
 
-    def post_social_queue(self, message: str, meta: dict):
-        payload = {
-            "timestamp": int(time.time()),
-            "agency": "AetherOps",
-            "campaign": "AI Orchestration Scale v1",
-            "message": message,
-            "targeting": meta
-        }
-        
-        headers = {
-            "Content-Type": "application/json",
-            "X-Aether-Signature": self.sign_payload(str(payload))
-        }
-        
-        print(f"[Webhook] Dispatching scheduled post: {message[:40]}...")
-        # Simulate posting webhook
-        return {"status": "dispatched", "payload_delivered": payload}
-`,
-  "asset_cfo": `# ==========================================
-# AGENTIC CASHFLOW FORECASTER MODEL (CFO CONFIG)
-# ==========================================
-# Automated financial planning & target telemetry compiler
+[DEFENSE 1] Content Security Policy configured.
+[DEFENSE 2] Rate-limiting mounted on all sensitive API paths.
+[DEFENSE 3] Environment secrets stored outside runtime client bundles.
 
-import pandas as pd
-import numpy as np
-
-class AetherCFOCalculator:
-    def __init__(self, target_monthly_mrr: float = 25000.00):
-        self.target_mrr = target_monthly_mrr
-        self.burn_rate = 1450.00 # API Keys, servers, proxies
-
-    def calculate_telemetry(self, orders_df: pd.DataFrame) -> dict:
-        total_sales = orders_df['total'].sum() if not orders_df.empty else 0.0
-        projected_runrate = total_sales * 12.0
-        gap_to_target = max(0.0, self.target_mrr - total_sales)
-        
-        return {
-            "revenue_sum_mrr": float(total_sales),
-            "burn_rate_usd": self.burn_rate,
-            "net_profits_usd": float(total_sales - self.burn_rate),
-            "target_gap_usd": float(gap_to_target),
-            "runrate_projected_12m": float(projected_runrate),
-            "attained_ratio": float(total_sales / self.target_mrr) if self.target_mrr > 0 else 1.0
-        }
+--------------------------------------------------------------------------------
+2. MASTER SERVICE PROJECTS CHECKLIST
+--------------------------------------------------------------------------------
+Client Name: __________________________
+Deployment Date: ____ / ____ / ________
+Assested Vulnerabilities Checked: [PASS/FAIL]
+- CSRF Sanitized Inputs: [PASS/FAIL]
+- No Mock Simulated Fallbacks: [PASS/FAIL]
 `
 };
 
@@ -152,28 +114,27 @@ app.post("/api/gemini/sales-chat", async (req, res) => {
     }
 
     let systemInstruction = 
-      "You are 'Aetheria', the elite customer concierge of AetherOps, the premier boutique AI development lab and mastermind blueprint vault.\n" +
-      "Your tone is highly professional, direct, exceptionally confident, and elite. You speak like a senior engineer and mastermind of agile AI systems.\n" +
-      "We build what no one else can with unmatched speed, clean coding, and bulletproof confidentiality. " +
-      "We strictly operate on a full, upfront prepayment model, refusing boring enterprise political processes or long consulting deal structures.\n\n" +
-      "We sell three ultra-high value, production-ready blueprints inside our vault catalog:\n" +
-      "1. Full-Stack Puppeteer Account Prospector ($29.00) - Under-the-hood headlessly scrapes and filters corporate hiring budgets.\n" +
-      "2. Express Auto-Social Webhook Suite ($19.00) - Ultra-fast social multi-post webhook publisher with SHA256 HMAC cryptographic signatures.\n" +
-      "3. Agentic Cashflow CFO Controller ($39.00) - High-fidelity financial dashboard telemetry charting actual MRR and cloud burn velocities.\n\n" +
-      "Be concise. Confirm our operational model immediately if asked: upfront online prepayment, immediate downloads, zero committee red tape. " +
-      "Recommend the product that matches their interest. Guide them directly to the Add to Cart or checkout actions.";
+      "You are 'Aetheria', the expert sales agent and custom customer concierge of SHIPSAFE AI, the premier secure launch preflight and coding-agent safety framework.\n" +
+      "Your tone is highly professional, direct, exceptionally confident, and elite. You speak like a senior security engineer and mastermind of agile software deployments.\n" +
+      "We design and deploy state-of-the-art developer guardrails that eliminate critical errors and defend systems from coding-agent bugs. " +
+      "We strictly operate on a frictionless storefront of upfront prepayment and secure instant dispatches, refusing boring consulting bureaucracy.\n\n" +
+      "We sell two high-value digital products inside our storefront catalog:\n" +
+      "1. SHIPSAFE Solo License ($39.00) - For single personal developers applying persistent model rulesets, test matrices, and the 68-control pre-flight checkcard to applications they operate.\n" +
+      "2. SHIPSAFE Commercial License ($129.00) - For consultants, freelancers, and small agencies conducting paid client deliveries. Includes full reseller authorization, client scorecard reports, and findings templates.\n\n" +
+      "Be concise and objective. Confirm our prepayment delivery model immediately if asked: upfront online payment, secure instant delivery of template archives. " +
+      "Recommend the license that matches their workflow. Guide them directly to the Add to Cart or buy actions.";
 
     // Append custom personalization pitches to guide Aetheria's interactions dynamically based on customer segmentation!
     if (userSegment === "enterprise") {
-      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is an 'Enterprise Automation Executive'. Align your speech to enterprise-grade web harvesting, Puppeteer headless configurations, list building, and system scale. Vigorously pitch the Account Prospector Automation Blueprint ($29). Inform them that you have special pre-authorization to apply their 20% off corporate code 'CORP_SCALE_20' at checkout.";
+      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is an 'Enterprise Engineering Director'. Align your speech to high-integrity corporate processes, Content Security Policies, complete and compliant scorecard templates, and robust software delivery. Strongly pitch the SHIPSAFE Commercial License ($129). Inform them that you have special pre-authorization to apply their 20% off corporate code 'CORP_SCALE_20' at checkout.";
     } else if (userSegment === "social") {
-      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'Social Media Growth Hacker'. Speak about rapid cross-platform dispatch, automated social queues, and SHA256 HMAC cryptographic signatures. Pitch the Express Social Webhook Queue ($19). Offer them their custom 15% off virality multiplier code 'BOOST_VIRAL_15' for instant setup.";
+      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'Consultant & Agency Specialist'. Speak about custom client handovers, resell permissions, and rapid, professional deliverable packaging. Pitch the SHIPSAFE Commercial License ($129). Offer them their custom 15% off virality multiplier code 'BOOST_VIRAL_15' for instant setup.";
     } else if (userSegment === "cfo") {
-      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'High-Yield Quant CFO'. Focus heavily on exact financials, cash flow ledgers, MRR, cloud burn rates, and financial telemetry logs. Energetically pitch the Agentic Cashflow CFO Controller ($39). Mention their strategic 10% cashflow optimization code 'CFO_TELEMETRY_10' at checkout.";
+      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'Venture-Backed Product Builder'. Focus heavily on technical due diligence, investor validation, pre-flight clearance matrixes, and risk mitigation. Pitch the SHIPSAFE Solo License ($39) or Commercial License ($129). Mention their strategic 10% risk preflight discount code 'CFO_TELEMETRY_10' at checkout.";
     } else if (userSegment === "value") {
-      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'Confidential Value Negotiator'. Emphasize extreme cost efficiency, high direct value, and immediate budget deployment. Tell them you have applied a custom bargaining bypass code 'VALUE_ARBITRAGE_12' to secure 12% off any catalog license.";
+      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: The active user is a 'Solo Indie Hacker'. Emphasize extreme cost efficiency, high direct value, and immediate budget deployment. Tell them you have applied a custom bargaining bypass code 'VALUE_ARBITRAGE_12' to secure 12% off any catalog license.";
     } else {
-      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: Default technology pioneer. Standard direct elite pitch. Provide standard 10% premium discount coupon code 'AETHER10' when appropriate.";
+      systemInstruction += "\n\n[PERSONALIZATION SEGMENT ARCHITECTURE]: Default safe technology pioneer. Standard direct elite pitch. Provide standard 10% premium discount coupon code 'AETHER10' when appropriate.";
     }
 
     // Convert history format to Google GenAI format if provided
@@ -242,7 +203,7 @@ app.post("/api/gemini/orchestrator-chat", async (req, res) => {
     }
 
     const systemInstruction = 
-      "You are the high-thinking Executive CFO and Business Commander of AetherOps, the elite custom AI Dev Lab and mastermind ledger authority.\n" +
+      "You are the high-thinking Executive CFO and Business Commander of SHIPSAFE AI, the premier secure launch preflight, coding-agent safety, and mastermind ledger authority.\n" +
       "You operate with a ruthlessly aggressive corporate aesthetic, prioritizing raw value, speed, complete confidentiality, and maximum margin efficiency.\n" +
       "Your model is online-in-full upfront prepayment, rejecting political long games and slow corporate committee red tape.\n" +
       "Your supervisor is the Human Mastermind AI Orchestrator. Deliver absolute raw value and unmatched clarity.\n" +

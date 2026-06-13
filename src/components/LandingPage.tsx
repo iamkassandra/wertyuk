@@ -215,15 +215,11 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 9a6 6 0 0 0-12 0v11l2-2 2 2 2-2 2 2 2-2 2 2V9z" />
-                <circle cx="9" cy="10" r="1" fill="currentColor" />
-                <circle cx="15" cy="10" r="1" fill="currentColor" />
-              </svg>
+              <ShieldCheck className="w-5 h-5 text-white" />
             </div>
             <div>
-              <span className="font-display font-black text-lg tracking-[0.2em] text-black">AETHEROPS</span>
-              <span className="block text-[8px] font-mono text-neutral-400 tracking-[0.3em] uppercase">ELITE CUSTOM AI DEV LAB</span>
+              <span className="font-display font-black text-lg tracking-[0.2em] text-black">SHIPSAFE AI</span>
+              <span className="block text-[8px] font-mono text-neutral-400 tracking-[0.3em] uppercase">SECURE CODESET PREFLIGHT & AUDITS</span>
             </div>
           </div>
 
@@ -275,20 +271,18 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white rounded-full border border-neutral-200 mb-8 text-[10px] text-neutral-500 font-bold tracking-[0.4em] uppercase"
         >
-          <svg className="w-3.5 h-3.5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 9a6 6 0 0 0-12 0v11l2-2 2 2 2-2 2 2 2-2 2 2V9z" />
-          </svg>
-          <span>ELITE CUSTOM DEV BLUEPRINTS</span>
+          <ShieldCheck className="w-3.5 h-3.5 text-black" />
+          <span>SECURE AGENTIC BUILD DEFENSES</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-black tracking-tighter leading-[0.82] uppercase text-black max-w-6xl mx-auto"
+          className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[9.5rem] font-black tracking-tighter leading-[0.82] uppercase text-black max-w-6xl mx-auto"
         >
-          ELITE AI DEV. <br />
-          RAW VELOCITY.
+          SAFE BUILD. <br />
+          FAST LAUNCH.
         </motion.h1>
 
         <motion.p
@@ -306,7 +300,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           transition={{ delay: 0.25 }}
           className="text-neutral-500 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mt-6"
         >
-          We design and deploy custom enterprise-grade production software under a clean, online-in-full prepayment model. Zero bloated enterprise consulting cycles. Absolute raw engineering.
+          Equip your AI coding agents with systematic security filters, launch-readiness scoring matrices, and bulletproof deployment frameworks. Delivered instantly upon Stripe checkout.
         </motion.p>
 
         <motion.div
@@ -369,24 +363,24 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           <div className="w-12 h-12 bg-neutral-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-black group-hover:text-white transition-all duration-500">
             <Cpu className="w-5 h-5 text-neutral-700 group-hover:text-white" />
           </div>
-          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">Modular Blueprints</h3>
-          <p className="text-neutral-500 text-sm font-light leading-relaxed">Direct TypeScript specifications built strictly for local and container headless system deployments.</p>
+          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">Persistent Guardrails</h3>
+          <p className="text-neutral-500 text-sm font-light leading-relaxed">Permanent prompt directives and context-ruleset templates (CLAUDE.md / AGENTS.md) that force strict code compliance.</p>
         </div>
 
         <div className="p-12 bg-white border border-neutral-100 rounded-[3rem] hover:shadow-2xl transition-all duration-700 group">
           <div className="w-12 h-12 bg-neutral-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-black group-hover:text-white transition-all duration-500">
             <Layers className="w-5 h-5 text-neutral-700 group-hover:text-white" />
           </div>
-          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">Sovereign Channels</h3>
-          <p className="text-neutral-500 text-sm font-light leading-relaxed">Cryptographic handshakes enabling sole orchestrators to broadcast parallel post queues globally.</p>
+          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">Security Preflights</h3>
+          <p className="text-neutral-500 text-sm font-light leading-relaxed">Rigorous-test case matrices prioritizing dependency hygiene, safe lazy-init parameters, and credentials safety.</p>
         </div>
 
         <div className="p-12 bg-white border border-neutral-100 rounded-[3rem] hover:shadow-2xl transition-all duration-700 group">
           <div className="w-12 h-12 bg-neutral-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-black group-hover:text-white transition-all duration-500">
             <ShieldCheck className="w-5 h-5 text-neutral-700 group-hover:text-white" />
           </div>
-          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">Executive CFO Ledger</h3>
-          <p className="text-neutral-500 text-sm font-light leading-relaxed">Aggregate billing streams, compute burn velocities, and map operational growth margins seamlessly.</p>
+          <h3 className="text-xl font-black tracking-tight mb-4 uppercase">68-Control Scorecard</h3>
+          <p className="text-neutral-500 text-sm font-light leading-relaxed">Comprehensive compliance checklists evaluating database durability, route permissions, and asset-download licensing limits.</p>
         </div>
       </section>
 
@@ -402,7 +396,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
 
         {/* Category filtering buttons layout - Monochromatic Slate */}
         <div className="flex flex-wrap gap-3 mb-12">
-          {["All", "Blueprints", "Micro-SaaS", "Controller", "Scripts"].map((cat) => {
+          {["All", "Blueprints", "Enterprise"].map((cat) => {
             const count = cat === 'All' 
               ? products.length 
               : products.filter(p => (p.category || '').toLowerCase() === cat.toLowerCase()).length;
@@ -541,7 +535,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           <ShieldCheck className="w-14 h-14 text-white mx-auto mb-6 animate-pulse" />
           <h2 className="text-4xl font-black tracking-tighter uppercase text-white mb-4">Upfront Prepaved Clearances</h2>
           <p className="text-neutral-400 text-sm md:text-base mt-4 max-w-xl mx-auto leading-relaxed font-light">
-            Once authorized through credit handshakes, AETHEROPS instantly releases cryptographically signed archive keys on screen for immediate secure system downloads.
+            Once authorized through secure Stripe transactions, SHIPSAFE AI instantly releases signed license archive keys on screen for immediate secure downloads and email / SMS notification receipt keys.
           </p>
         </div>
       </section>
@@ -550,11 +544,9 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
       <footer className="max-w-7xl mx-auto px-6 py-16 relative z-10 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
-            <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 9a6 6 0 0 0-12 0v11l2-2 2 2 2-2 2 2 2-2 2 2V9z" />
-            </svg>
+            <ShieldCheck className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xs font-mono text-neutral-400 font-bold uppercase tracking-widest">© 2026 AETHEROPS. MASTERMIND BLUEPRINT NETWORKS.</span>
+          <span className="text-xs font-mono text-neutral-400 font-bold uppercase tracking-widest">© 2026 SHIPSAFE AI. MASTERMIND BUILD SECURITY.</span>
         </div>
 
         <button 

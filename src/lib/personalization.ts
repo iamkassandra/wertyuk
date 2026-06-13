@@ -48,83 +48,83 @@ export interface CustomerProfile {
 export const SEGMENT_PROFILES: Record<SegmentId, SegmentDetail> = {
   enterprise: {
     id: "enterprise",
-    label: "Enterprise Automation Executive",
-    subLabel: "Scaling Operations & Machine-Guided Outbound",
-    description: "Highly focused on scrapers, leads matching, cold pipeline engineering, and mass automated workflow logic. High pricing tolerance.",
-    badge: "Automation Architect",
-    pitch: "Engineered for Sole Operators Deploying Enterprise-Scale Outbound Rigs.",
+    label: "Enterprise Engineering Director",
+    subLabel: "Mission-Critical Systems & Secure Delivery",
+    description: "Focused on bulletproof defensive engineering, code completeness, secure pipelines, and compliance scorecard templates. High pricing tolerance.",
+    badge: "Systems Architect",
+    pitch: "Apply Rigorous Security & Build-Guardrail Protocols to Large Scale Workspace Workflows.",
     banner: {
-      title: "Tactical Corporate Upgrade Activated",
-      description: "Secure automated outreach loops with our custom Puppeteer prospecting suite. Bypasses general queues with a dedicated scale coupon.",
+      title: "Commercial Studio License Recommended",
+      description: "Secure automated handovers with the SHIPSAFE Commercial edition, including reselling rights, editable template directories, and findings registers.",
       badgeText: "20% Corp License",
       discountCode: "CORP_SCALE_20",
       discountPercent: 20
     },
-    reorderedProductIds: ["asset_prospector", "asset_webhook", "asset_cfo"]
+    reorderedProductIds: ["asset_commercial", "asset_solo"]
   },
   social: {
     id: "social",
-    label: "Social Media Growth Hacker",
-    subLabel: "Multi-Platform Mass Distribution & HMAC Security",
-    description: "Driven by fast-turn workflows, cross-platform scheduling, automated webhooks, and viral propagation models.",
-    badge: "Virality Operator",
-    pitch: "Dominate Public Feedstreams with Secure High-Throughput Webhook Publishers.",
+    label: "Consultant & Agency Specialist",
+    subLabel: "Fast Delivery Client Handover & Commercial Licensing",
+    description: "Driven by fast-turn workflows, reusable client-facing templates, professional release records, and priority systems.",
+    badge: "Vanguard Consultant",
+    pitch: "Exceed Client Handover Standards with Premium Reusable Evaluation Materials.",
     banner: {
-      title: "Dynamic Social Commission Boost",
-      description: "Dispatch automated social growth buffers with bulletproof SHA256 HMAC cryptographic handshakes. Unlock rapid feed mastery.",
+      title: "Agency Commercial Grant Active",
+      description: "Equip your studio with commercial project resale parameters. Use this verified token to secure your copy under budget.",
       badgeText: "15% Speed License",
       discountCode: "BOOST_VIRAL_15",
       discountPercent: 15
     },
-    reorderedProductIds: ["asset_webhook", "asset_prospector", "asset_cfo"]
+    reorderedProductIds: ["asset_commercial", "asset_solo"]
   },
   cfo: {
     id: "cfo",
-    label: "High-Yield Quant CFO",
-    subLabel: "Strategic Treasury Optimization & MRR Telemetry",
-    description: "Deeply values financial calculations, cash flow graphs, burn optimization checklists, and ledger authenticity.",
-    badge: "Mastermind Ledger Lord",
-    pitch: "Consolidate MRR Velocities & Model Cloud Burn with Mathematical Precision.",
+    label: "Venture-Backed Product Builder",
+    subLabel: "Launch Control & Technical Due Diligence",
+    description: "Deeply values systematic due diligence, pre-flight checklists, investor-ready report structures, and risk mitigation profiles.",
+    badge: "Technical Founder",
+    pitch: "Mitigate Early Technical Release Risk with the 68-Control Scorecard Framework.",
     banner: {
-      title: "Strategic Treasury Package Unlocked",
-      description: "Consolidate database snapshots and cash forecasts instantly with tailored CFO dashboard controls and financial checklist logs.",
+      title: "Launch Readiness Audit Pack Unlocked",
+      description: "Instantly audit software code integrity before push. Establish permanent AGENTS.md rulesets to bypass developer failure paths.",
       badgeText: "10% Treasury Bonus",
       discountCode: "CFO_TELEMETRY_10",
       discountPercent: 10
     },
-    reorderedProductIds: ["asset_cfo", "asset_prospector", "asset_webhook"]
+    reorderedProductIds: ["asset_solo", "asset_commercial"]
   },
   value: {
     id: "value",
-    label: "Confidential Value Negotiator",
-    subLabel: "Frictionless Checkout & Smart Incentive Seekers",
-    description: "Responds strongly to coupons, bulk bonuses, discount reminders, and upfront value statements.",
-    badge: "Arbitrage Tactician",
-    pitch: "Slick, Bulletproof Code Bundles Optimized for Extreme Capital Efficiency.",
+    label: "Solo Indie Hacker",
+    subLabel: "Rapid Safe Deployments & Budget Safeguards",
+    description: "Responds strongly to direct value statements, robust single-builder rigs, and affordable launcher tools.",
+    badge: "Indie Craftsman",
+    pitch: "High-Fidelity Project Guardrails to Secure Single-Builder Application Rigs.",
     banner: {
-      title: "Negotiated Entry Code Assigned",
-      description: "Special arbitrage coupon unlocked. Direct human pre-authorization confirmed: deploy the entire suite with minimal financial drag.",
+      title: "Indie Developer Grant Assigned",
+      description: "Special community developer discount active. Secure the complete SHIPSAFE Solo framework with zero fiscal friction.",
       badgeText: "12% Arbitrage Special",
       discountCode: "VALUE_ARBITRAGE_12",
       discountPercent: 12
     },
-    reorderedProductIds: ["asset_webhook", "asset_cfo", "asset_prospector"]
+    reorderedProductIds: ["asset_solo", "asset_commercial"]
   },
   general: {
     id: "general",
-    label: "AetherOps Technology Pioneer",
-    subLabel: "Boutique Raw Code Blueprints & Systems Masterminding",
-    description: "Exploring default premium catalog vaults. Balanced interest scores with an eye for elite agile integrations.",
-    badge: "Vault Member",
-    pitch: "Elite Boutique Digital Assets & Integrated Conversion Agents.",
+    label: "Standard Safe Technology Builder",
+    subLabel: "Secure Launch Checklists & AI Guardrails",
+    description: "Exploring standard security layouts. Aims to eliminate critical code-breaking errors and deploy into production safely.",
+    badge: "Safe Builder",
+    pitch: "Eliminate Code-Breaking Errors and Launch in Production with Absolute Confidence.",
     banner: {
-      title: "Mastermind Entrance Code Active",
-      description: "Pre-authorized credentials granted: utilize standard code vault checkouts for immediate digital script delivery.",
+      title: "Founding Builder Discount Code",
+      description: "Pre-authorized credentials granted: utilize secure founding coupons for immediate framework dispatches.",
       badgeText: "10% Standard Entry",
       discountCode: "AETHER10",
       discountPercent: 10
     },
-    reorderedProductIds: ["asset_prospector", "asset_webhook", "asset_cfo"]
+    reorderedProductIds: ["asset_solo", "asset_commercial"]
   }
 };
 
