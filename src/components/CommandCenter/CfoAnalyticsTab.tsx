@@ -133,25 +133,25 @@ export default function CfoAnalyticsTab({
         <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-700"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandred opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brandred"></span>
             </span>
             <span className="text-[10px] font-mono text-neutral-800 font-extrabold uppercase tracking-widest">LIVE GLOBAL REVENUE SECURED FEED</span>
           </div>
-          <span className="text-[8px] font-mono text-red-700 font-bold uppercase tracking-widest px-2.5 py-0.5 bg-red-50 rounded-full">SOCIAL PROOF STATS ACTIVE</span>
+          <span className="text-[8px] font-mono text-brandred font-bold uppercase tracking-widest px-2.5 py-0.5 bg-brandred/10 rounded-full">SOCIAL PROOF STATS ACTIVE</span>
         </div>
         
         <div className="flex gap-4 overflow-x-auto whitespace-nowrap py-1.5 scrollbar-thin select-none">
           {tickerSales.map((sale) => (
             <div key={sale.id} className="inline-flex items-center bg-white border border-neutral-200 border-b-2 border-r-2 rounded-[1.25rem] p-3 gap-3 shadow-sm min-w-[280px]">
-              <div className="w-7 h-7 bg-red-50 text-red-700 rounded-full flex items-center justify-center font-bold font-mono text-[10px]">
+              <div className="w-7 h-7 bg-brandred/10 text-brandred rounded-full flex items-center justify-center font-bold font-mono text-[10px]">
                 $
               </div>
               <div className="text-[10px] leading-tight space-y-0.5">
                 <div className="font-mono font-bold text-neutral-950">{sale.email}</div>
                 <div className="text-neutral-500 font-sans">{sale.product}</div>
                 <div className="flex items-center gap-1.5 text-[8.5px] font-mono text-neutral-400 mt-0.5 uppercase tracking-wide">
-                  <span className="text-red-700 font-bold">${sale.price.toFixed(2)}</span>
+                  <span className="text-brandred font-bold">${sale.price.toFixed(2)}</span>
                   <span>•</span>
                   <span>{sale.region}</span>
                   <span>•</span>

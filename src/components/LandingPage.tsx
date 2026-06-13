@@ -120,7 +120,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
       doc.text(`TOKEN REFERENCE: ${receipt.token}`, 135, 32);
       
       // Blood red divider line
-      doc.setDrawColor(185, 28, 28); // #b91c1c - Rich blood red
+      doc.setDrawColor(122, 0, 16); // #7a0010 - Deep blood red (15% deeper)
       doc.setLineWidth(1.5);
       doc.line(20, 52, 190, 52);
       
@@ -188,7 +188,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
       doc.text(`$${receipt.total.toFixed(2)}`, 165, cursorY + 10);
       
       // Blood red Footer Band
-      doc.setFillColor(185, 28, 28);
+      doc.setFillColor(122, 0, 16);
       doc.rect(0, 286, 210, 11, 'F');
       
       doc.setTextColor(255, 255, 255);
@@ -341,11 +341,11 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                 trackUserBehavior("view_personalization_panel", "header_interaction", "User opened their dynamic segment profile summary");
                 setIsProfileOpen(true);
               }}
-              className="flex items-center gap-2 bg-red-750/10 border border-red-700/25 hover:bg-red-700/20 px-4 py-2 rounded-full transition-all cursor-pointer"
+              className="flex items-center gap-2 bg-brandred/10 border border-brandred/25 hover:bg-brandred/20 px-4 py-2 rounded-full transition-all cursor-pointer"
               id="personalization-panel-trigger"
             >
-              <Sparkles className="w-3.5 h-3.5 text-red-650 animate-pulse" />
-              <span className="text-[9px] font-black tracking-widest text-red-800 uppercase">
+              <Sparkles className="w-3.5 h-3.5 text-brandred animate-pulse" />
+              <span className="text-[9px] font-black tracking-widest text-brandred uppercase">
                 {getActiveSegmentation().segment.badge}
               </span>
             </button>
@@ -390,17 +390,17 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[9.5rem] font-black tracking-tighter leading-[0.82] uppercase text-black max-w-6xl mx-auto"
+          className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[9.5rem] font-black tracking-tighter uppercase max-w-6xl mx-auto flex flex-col items-center leading-[0.78]"
         >
-          SAFE BUILD. <br />
-          FAST LAUNCH.
+          <span className="text-black select-none z-10 relative">SAFE BUILD.</span>
+          <span className="text-brandred select-none z-20 relative -mt-[0.12em]">FAST LAUNCH.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="serif italic font-light text-red-700/90 lowercase text-3xl sm:text-5xl mt-6 max-w-3xl mx-auto leading-tight"
+          className="serif italic font-light text-brandred/90 lowercase text-3xl sm:text-5xl mt-6 max-w-3xl mx-auto leading-tight"
         >
           {getActiveSegmentation().segment.pitch}
         </motion.p>
@@ -436,14 +436,14 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
             animate={{ opacity: 1, y: 0 }}
             className="max-w-7xl mx-auto px-6 mb-12 relative z-10"
           >
-            <div className="bg-red-750/[0.04] border border-red-700/20 rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-sm">
+            <div className="bg-brandred/[0.04] border border-brandred/20 rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-sm">
               <div className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-2xl bg-red-750/10 flex items-center justify-center shrink-0 border border-red-700/20 text-red-700">
+                <div className="w-12 h-12 rounded-2xl bg-brandred/10 flex items-center justify-center shrink-0 border border-brandred/20 text-brandred">
                   <Percent className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
-                  <div className="inline-flex items-center gap-1.5 bg-red-750/15 text-red-900 text-[8px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2">
-                    <Sparkles className="w-2.5 h-2.5 text-red-650" />
+                  <div className="inline-flex items-center gap-1.5 bg-brandred/15 text-brandred text-[8px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2">
+                    <Sparkles className="w-2.5 h-2.5 text-brandred" />
                     <span>{banner.badgeText} ACTIVATED</span>
                   </div>
                   <h3 className="text-xl font-black uppercase tracking-tight text-neutral-900">{banner.title}</h3>
@@ -555,7 +555,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                     key={p.id}
                     className={`masonry-item group cursor-pointer bg-white border rounded-[2.5rem] p-8 shadow-sm transition-all duration-700 hover:shadow-[0_45px_90px_-20px_rgba(0,0,0,0.06)] hover:-translate-y-3 flex flex-col justify-between ${
                       isTopRecommendation 
-                        ? 'border-red-500/60 shadow-[0_15px_30px_-10px_rgba(185,28,28,0.06)]' 
+                        ? 'border-brandred/60 shadow-[0_15px_30px_-10px_rgba(122,0,16,0.06)]' 
                         : 'border-neutral-100'
                     }`}
                     id={`product-card-${p.id}`}
@@ -567,8 +567,8 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                     {/* Product Cover Accent */}
                     <div>
                       {isTopRecommendation && (
-                        <div className="mb-4 inline-flex items-center gap-1 bg-red-750/10 border border-red-700/20 text-red-800 text-[8px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
-                          <Sparkles className="w-3 h-3 text-red-700 animate-pulse" />
+                        <div className="mb-4 inline-flex items-center gap-1 bg-brandred/10 border border-brandred/20 text-brandred text-[8px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                          <Sparkles className="w-3 h-3 text-brandred animate-pulse" />
                           <span>Confidential Recommendation for you</span>
                         </div>
                       )}
@@ -663,7 +663,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 text-start">
               
               <div className="p-8 bg-neutral-100/90 border-2 border-neutral-300 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.06),inset_0_1px_1px_white] hover:shadow-[0_20px_45px_rgba(0,0,0,0.09)] transition-all">
-                <span className="text-[9px] font-mono text-red-700 font-black tracking-widest block mb-1">CONTROL PROTOCOL 01</span>
+                <span className="text-[9px] font-mono text-brandred font-black tracking-widest block mb-1">CONTROL PROTOCOL 01</span>
                 <h4 className="font-extrabold text-neutral-900 text-sm uppercase mb-2">Ingress Port Integrity</h4>
                 <p className="text-xs text-neutral-500 font-light leading-relaxed">
                   Locking development and container production systems to strict standard ports exclusively. Removing rogue internal microservices.
@@ -671,7 +671,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
               </div>
 
               <div className="p-8 bg-neutral-100/90 border-2 border-neutral-300 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.06),inset_0_1px_1px_white] hover:shadow-[0_20px_45px_rgba(0,0,0,0.09)] transition-all">
-                <span className="text-[9px] font-mono text-red-700 font-black tracking-widest block mb-1">CONTROL PROTOCOL 02</span>
+                <span className="text-[9px] font-mono text-brandred font-black tracking-widest block mb-1">CONTROL PROTOCOL 02</span>
                 <h4 className="font-extrabold text-neutral-900 text-sm uppercase mb-2">Variable Lazy-Init</h4>
                 <p className="text-xs text-neutral-500 font-light leading-relaxed">
                   Eliminating structural crash loops on startup by enforcing verified variable injection gates prior to SDK loading trigger sequences.
@@ -679,7 +679,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
               </div>
 
               <div className="p-8 bg-neutral-100/90 border-2 border-neutral-300 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.06),inset_0_1px_1px_white] hover:shadow-[0_20px_45px_rgba(0,0,0,0.09)] transition-all">
-                <span className="text-[9px] font-mono text-red-700 font-black tracking-widest block mb-1">CONTROL PROTOCOL 03</span>
+                <span className="text-[9px] font-mono text-brandred font-black tracking-widest block mb-1">CONTROL PROTOCOL 03</span>
                 <h4 className="font-extrabold text-neutral-900 text-sm uppercase mb-2">HMR Exclusions Gate</h4>
                 <p className="text-xs text-neutral-500 font-light leading-relaxed">
                   Isolating runtime states from Hot Module Replacement flushes, ensuring that UI updates persist cleanly during swift transitions.
@@ -687,7 +687,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
               </div>
 
               <div className="p-8 bg-neutral-100/90 border-2 border-neutral-300 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.06),inset_0_1px_1px_white] hover:shadow-[0_20px_45px_rgba(0,0,0,0.09)] transition-all">
-                <span className="text-[9px] font-mono text-red-700 font-black tracking-widest block mb-1">CONTROL PROTOCOL 04</span>
+                <span className="text-[9px] font-mono text-brandred font-black tracking-widest block mb-1">CONTROL PROTOCOL 04</span>
                 <h4 className="font-extrabold text-neutral-900 text-sm uppercase mb-2">Sandbox Isolation storage</h4>
                 <p className="text-xs text-neutral-500 font-light leading-relaxed">
                   Verifying absolute client data boundaries with secure browser local state backup handlers, isolating logs and transactions.
@@ -1041,10 +1041,10 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
 
                   {checkoutStep === 'success' && stripeReceipt && (
                     <div className="space-y-6">
-                      <div className="p-6 bg-red-950/40 border border-red-900 rounded-[2rem] text-center space-y-3">
-                        <CheckCircle className="w-12 h-12 text-red-700 mx-auto animate-bounce" strokeWidth={1.5} />
+                      <div className="p-6 bg-brandred-hover/40 border border-brandred/40 rounded-[2rem] text-center space-y-3">
+                        <CheckCircle className="w-12 h-12 text-brandred mx-auto animate-bounce" strokeWidth={1.5} />
                         <h4 className="font-display font-black uppercase text-white tracking-[0.2em] text-sm">Receipt Confirmed</h4>
-                        <p className="text-xs text-red-300 font-light">Payment receipt successfully computed and logged securely.</p>
+                        <p className="text-xs text-rose-200 font-light">Payment receipt successfully computed and logged securely.</p>
                       </div>
 
                       <div className="space-y-3">
@@ -1054,7 +1054,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                           <button 
                             onClick={() => generatePdfReceipt(stripeReceipt)}
                             type="button"
-                            className="w-full bg-red-700 hover:bg-red-800 text-white rounded-full py-3.5 px-4 text-[10px] font-mono font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-95 shadow-md shadow-red-900/10"
+                            className="w-full bg-brandred hover:bg-brandred-hover text-white rounded-full py-3.5 px-4 text-[10px] font-mono font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-95 shadow-md shadow-brandred/10"
                           >
                             <Download className="w-4 h-4" />
                             <span>Download Official PDF Receipt</span>
@@ -1073,7 +1073,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                               disabled={exportMethod.includes('sending')}
                               className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-200 hover:text-white rounded-full py-2.5 px-3 text-[9px] font-mono font-black uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
                             >
-                              <Mail className="w-3.5 h-3.5 text-red-500" />
+                              <Mail className="w-3.5 h-3.5 text-brandred" />
                               <span>{exportMethod === 'email_sent' ? 'Emailed ✓' : exportMethod === 'email_sending' ? 'Sending...' : 'E-Mail PDF'}</span>
                             </button>
 
@@ -1089,7 +1089,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                               disabled={exportMethod.includes('sending')}
                               className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-200 hover:text-white rounded-full py-2.5 px-3 text-[9px] font-mono font-black uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
                             >
-                              <Phone className="w-3.5 h-3.5 text-red-500" />
+                              <Phone className="w-3.5 h-3.5 text-brandred" />
                               <span>{exportMethod === 'sms_sent' ? 'SMS Sent ✓' : exportMethod === 'sms_sending' ? 'Sending...' : 'SMS Token'}</span>
                             </button>
                           </div>
@@ -1143,7 +1143,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                       </div>
 
                       <div className="pt-4 border-t border-neutral-900 flex gap-2.5">
-                        <div className="w-1.5 h-1.5 bg-red-700 rounded-full shrink-0 mt-1.5" />
+                        <div className="w-1.5 h-1.5 bg-brandred rounded-full shrink-0 mt-1.5" />
                         <p className="text-[10.5px] text-neutral-500 leading-relaxed font-light">
                           A local copy of your downloadable links and receipts has been securely logged on sandbox storage. Compliance scorecards have flagged all systems passed under standard protocols.
                         </p>
@@ -1223,7 +1223,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
               <div className="p-8 border-b border-neutral-150 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-red-700" />
+                    <Activity className="w-5 h-5 text-brandred" />
                     <h3 className="text-xl font-black uppercase tracking-tight text-neutral-900">Personalization Index</h3>
                   </div>
                   <p className="text-neutral-500 text-xs font-light mt-1">Real-time telemetry logging behavioral signals & segment parameters.</p>
@@ -1248,26 +1248,26 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                   return (
                     <>
                       {/* Section 1: Active Segment Profile */}
-                      <div className="bg-red-750/[0.04] border border-red-700/20 rounded-[2rem] p-6 space-y-4">
+                      <div className="bg-brandred/[0.04] border border-brandred/20 rounded-[2rem] p-6 space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-black tracking-widest text-[#991b1b] uppercase">Active Classification</span>
-                          <span className="bg-red-750/10 text-red-900 text-[8px] font-black px-2 py-0.5 rounded-full uppercase">
+                          <span className="text-[10px] font-black tracking-widest text-brandred uppercase">Active Classification</span>
+                          <span className="bg-brandred/10 text-brandred text-[8px] font-black px-2 py-0.5 rounded-full uppercase">
                             Confidence: {(activeSeg.confidence * 100).toFixed(0)}%
                           </span>
                         </div>
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-red-750/10 border border-red-700/20 rounded-2xl flex items-center justify-center text-red-700 font-bold">
-                            <UserCheck className="w-5 h-5 text-red-750" />
+                          <div className="w-12 h-12 bg-brandred/10 border border-brandred/20 rounded-2xl flex items-center justify-center text-brandred font-bold">
+                            <UserCheck className="w-5 h-5 text-brandred" />
                           </div>
                           <div>
                             <h4 className="text-lg font-black uppercase text-neutral-900 tracking-tight leading-none">{segment.label}</h4>
-                            <span className="text-[10.5px] font-mono text-red-800 tracking-wider uppercase font-bold">{segment.badge}</span>
+                            <span className="text-[10.5px] font-mono text-brandred tracking-wider uppercase font-bold">{segment.badge}</span>
                           </div>
                         </div>
                         <p className="text-xs text-neutral-500 leading-relaxed font-light italic">"{segment.pitch}"</p>
                         
                         {/* applied discount badge and voucher code */}
-                        <div className="pt-3 border-t border-red-700/10 flex items-center justify-between">
+                        <div className="pt-3 border-t border-brandred/10 flex items-center justify-between">
                           <div>
                             <span className="block text-[9px] font-black text-neutral-400 uppercase tracking-widest">Calculated Voucher</span>
                             <span className="font-mono text-xs font-bold text-neutral-800">{segment.banner.discountCode} ({segment.banner.discountPercent}% OFF)</span>
@@ -1281,7 +1281,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                               setTimeout(() => setCopiedCode(false), 2000);
                               triggerToast(`Voucher code ${segment.banner.discountCode} applied to checkout automatically!`, "success");
                             }}
-                            className="bg-red-750/10 border border-red-700/25 text-red-850 hover:bg-red-700/20 px-4 py-2 rounded-full font-mono text-[9px] font-black uppercase tracking-widest cursor-pointer transition-all flex items-center gap-1.5 active:scale-95"
+                            className="bg-brandred/10 border border-brandred/25 text-brandred hover:bg-brandred/20 px-4 py-2 rounded-full font-mono text-[9px] font-black uppercase tracking-widest cursor-pointer transition-all flex items-center gap-1.5 active:scale-95"
                           >
                             <Copy className="w-3 h-3" />
                             <span>{copiedCode ? 'Applied' : 'Copy & Apply'}</span>
@@ -1371,7 +1371,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                                 }`}
                               >
                                 <span className="font-extrabold block truncate leading-tight">{profile.name}</span>
-                                <span className={`text-[8.5px] mt-2 block font-extrabold ${isOverriddenActive ? 'text-red-400' : 'text-neutral-400'}`}>
+                                <span className={`text-[8.5px] mt-2 block font-extrabold ${isOverriddenActive ? 'text-brandred' : 'text-neutral-400'}`}>
                                   {isOverriddenActive ? '★ ACTIVE OVERRIDE' : 'FORCE THIS'}
                                 </span>
                               </button>
@@ -1393,7 +1393,7 @@ export default function LandingPage({ onAdminToggle, addedProductId, clearAddedP
                           ) : (
                             [...logs].reverse().map((log, index) => (
                               <div key={index} className="flex gap-2.5 items-start py-2 border-b border-neutral-100 last:border-0 leading-normal text-start">
-                                <span className="text-red-700 shrink-0 select-none">{"[SIG]"}</span>
+                                <span className="text-brandred shrink-0 select-none">{"[SIG]"}</span>
                                 <div>
                                   <div className="flex items-center gap-1.5 flex-wrap">
                                     <span className="font-bold text-black uppercase text-[10px]">{log.action}</span>
